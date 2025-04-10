@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+  }
+  .navbar-links {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Top Navbar */
+  .navbar {
+    background-color: #1f2a37;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .navbar-left img {
+    height: 30px;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  
+  .navbar-links a.active,
+  .navbar-links a:hover {
+    border-bottom: 2px solid white;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .icon-circle {
+    background-color: white;
+    color: #1f2a37;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .badge {
+    position: relative;
+  }
+  
+  .badge::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+  }
+  
+  /* Content */
+  .header-banner {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .tab {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .tab.active {
+    background-color: #3062f6;
+    color: white;
+    border-color: #3062f6;
+  }
+  
+  .referral {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+  
+  .referral:last-child {
+    border-bottom: none;
+  }
+  
+  .referral h4 {
+    margin: 0;
+  }
+  
+  .referral p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .status {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .pill {
+    background-color: #cbd5e1;
+    color: #333;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-top: 5px;
+    display: inline-block;
+  }
+  
+  .refer-btn {
+    background-color: #3062f6;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+  
+  .actions {
+    color: #555;
+    margin-top: 15px;
+  }
+  
+  .actions a {
+    color: #3062f6;
+    text-decoration: none;
+    margin-left: 4px;
+  }
+  
+  select {
+    margin-left: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-right {
+      margin-top: 10px;
+    }
+  }
+
+  #referralModal {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  #referralModal h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  #referralModal label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  #referralModal input[type="text"],
+  #referralModal input[type="email"],
+  #referralModal input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  #referralModal input[type="file"] {
+    padding: 6px;
+    border: 1px dashed #aaa;
+    background: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  #referralModal input[type="file"]::-webkit-file-upload-button {
+    background: #f1f1f1;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #referralModal .section-title {
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  #referralModal button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  #referralModal button:nth-child(1) {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  #referralModal button:nth-child(2) {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  
+  

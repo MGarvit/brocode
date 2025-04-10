@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internal Job Portal - Login</title>
+  <link rel="stylesheet" href="login_styles.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Employee Login</h2>
+    <form onsubmit="handleLogin(event)">
+      <input type="text" id="email" placeholder="Employee ID or Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div class="note">Perficient Internal Job Portal</div>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value.trim().toLowerCase();
+
+      if (email.endsWith('@perficient.com') && email.includes('.')) {
+        const [username] = email.split('@');
+        const [first, last] = username.split('.');
+        const formattedName = `${capitalize(first)} ${capitalize(last)}`;
+        localStorage.setItem('userName', formattedName);
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Please use your perficient.com email in the format firstname.lastname@perficient.com');
+      }
+    }
+
+    function capitalize(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+  </script>
+</body>
+</html>
